@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Screener</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="fade-in">AI-Powered Resume Screener</h1>
+        <p class="fade-in">Upload your resume (PDF) and get instant AI insights.</p>
+
+        <form action="/" method="post" enctype="multipart/form-data">
+            <div class="file-upload fade-in">
+                <input type="file" name="resume" accept=".pdf" id="file-input" required>
+                <label for="file-input">Choose a Resume (PDF)</label>
+            </div>
+            <button type="submit" class="fade-in">Upload & Analyze</button>
+
+            <!-- Progress Bar -->
+            <div class="progress-container fade-in">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
